@@ -253,9 +253,18 @@ offset_bottom = 670.0
 theme_override_font_sizes/font_size = 128
 text = "PUZZLE SOLVED"
 
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 909.0
+offset_right = 376.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 95
+text = "Reset"
+
 [connection signal="input_event" from="SnapPosition1/FigurineRed/Area2D" to="SnapPosition1/FigurineRed" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="SnapPosition3/FigurineYellow/Area2D" to="SnapPosition3/FigurineYellow" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="SnapPosition4/FigurineGreen/Area2D" to="SnapPosition4/FigurineGreen" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="SnapPosition5/FigurineBlue/Area2D" to="SnapPosition5/FigurineBlue" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="SnapPosition6/FigurinePurple/Area2D" to="SnapPosition6/FigurinePurple" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="SnapPosition7/FigurineBlack/Area2D" to="SnapPosition7/FigurineBlack" method="_on_area_2d_input_event"]
+[connection signal="button_down" from="CanvasLayer/ResetButton" to="." method="_on_reset_button_button_down"]
