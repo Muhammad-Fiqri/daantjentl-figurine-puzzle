@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2c2ix4rlebf2"]
+
+[ext_resource type="Texture2D" uid="uid://bh45dk3144kvd" path="res://example.png" id="1_nr830"]
+[ext_resource type="Script" path="res://Figurine.gd" id="2_lptub"]
+[ext_resource type="Texture2D" uid="uid://djt5yd1tymr5c" path="res://icon.svg" id="3_20d3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfkav"]
+radius = 46.0977
+
+[node name="Figurine Puzzle" type="Node2D"]
+
+[node name="Example" type="Sprite2D" parent="."]
+position = Vector2(859, 502)
+scale = Vector2(2.17385, 2.75429)
+texture = ExtResource("1_nr830")
+
+[node name="Figurine" type="CharacterBody2D" parent="."]
+position = Vector2(318, 588)
+input_pickable = true
+script = ExtResource("2_lptub")
+
+[node name="Sprite2D" type="Sprite2D" parent="Figurine"]
+position = Vector2(-0.5, -132)
+scale = Vector2(0.695313, 2.17188)
+texture = ExtResource("3_20d3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Figurine"]
+shape = SubResource("CircleShape2D_lfkav")
+debug_color = Color(1, 0, 0.101961, 0.419608)
+
+[connection signal="input_event" from="Figurine" to="Figurine" method="_on_input_event"]

@@ -1,0 +1,261 @@
+[gd_scene load_steps=20 format=3 uid="uid://bgvou4y1ceqv1"]
+
+[ext_resource type="Texture2D" uid="uid://bh45dk3144kvd" path="res://example.png" id="1_13327"]
+[ext_resource type="Script" path="res://Script/figurine_puzzle_click.gd" id="1_po1an"]
+[ext_resource type="Script" path="res://Script/SnapPosition1.gd" id="2_f0am7"]
+[ext_resource type="Texture2D" uid="uid://djt5yd1tymr5c" path="res://icon.svg" id="3_23qas"]
+[ext_resource type="Texture2D" uid="uid://cynpj7fqdcl3t" path="res://user-front-side-with-white-background.jpg" id="3_fhsw3"]
+[ext_resource type="Script" path="res://Script/SnapPosition2.gd" id="4_3j7qa"]
+[ext_resource type="Script" path="res://Script/FigurineRed.gd" id="4_iron3"]
+[ext_resource type="Script" path="res://Script/SnapPosition3.gd" id="6_yfrvi"]
+[ext_resource type="Script" path="res://Script/SnapPosition4.gd" id="7_71vct"]
+[ext_resource type="Script" path="res://Script/FigurineBlue.gd" id="7_nwm17"]
+[ext_resource type="Script" path="res://Script/SnapPosition5.gd" id="8_lkmfh"]
+[ext_resource type="Script" path="res://Script/SnapPosition6.gd" id="9_4clv1"]
+[ext_resource type="Script" path="res://Script/FigurineYellow.gd" id="9_v2mrm"]
+[ext_resource type="Script" path="res://Script/SnapPosition7.gd" id="10_352ie"]
+[ext_resource type="Script" path="res://Script/FigurineGreen.gd" id="11_frji5"]
+[ext_resource type="Script" path="res://Script/UI.gd" id="12_2xbux"]
+[ext_resource type="Script" path="res://Script/FigurinePurple.gd" id="14_aibjo"]
+[ext_resource type="Script" path="res://Script/FigurineBlack.gd" id="16_imf1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odecg"]
+size = Vector2(129, 129.003)
+
+[node name="FigurinePuzzleClick" type="Node2D"]
+script = ExtResource("1_po1an")
+
+[node name="Example" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(2.75862, 3.08571)
+texture = ExtResource("1_13327")
+
+[node name="LineDebug" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(552, 587, 779, 858)
+
+[node name="Line2D2" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1009, 590, 779, 858)
+
+[node name="Line2D4" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1251, 867, 1006, 592)
+
+[node name="Line2D5" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1250, 862, 776, 854)
+
+[node name="Line2D6" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1005, 594, 1466, 594)
+
+[node name="Line2D7" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1238, 305, 1470, 592)
+
+[node name="Line2D8" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1240, 314, 1005, 595)
+
+[node name="Line2D9" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1006, 594, 769, 309)
+
+[node name="Line2D10" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(1241, 308, 769, 309)
+
+[node name="Line2D11" type="Line2D" parent="LineDebug"]
+visible = false
+points = PackedVector2Array(766, 308, 551, 582)
+
+[node name="SnapPosition1" type="Marker2D" parent="."]
+position = Vector2(554, 586)
+script = ExtResource("2_f0am7")
+
+[node name="RedSpot" type="Sprite2D" parent="SnapPosition1"]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-65, 74)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_fhsw3")
+
+[node name="FigurineRed" type="Sprite2D" parent="SnapPosition1"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(1, 2.44531)
+texture = ExtResource("3_23qas")
+offset = Vector2(0, -65)
+script = ExtResource("4_iron3")
+
+[node name="Area2D" type="Area2D" parent="SnapPosition1/FigurineRed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapPosition1/FigurineRed/Area2D"]
+position = Vector2(-0.5, -65.7284)
+shape = SubResource("RectangleShape2D_odecg")
+
+[node name="SnapPosition2" type="Marker2D" parent="."]
+position = Vector2(767, 308)
+script = ExtResource("4_3j7qa")
+
+[node name="BlueSpot" type="Sprite2D" parent="SnapPosition2"]
+self_modulate = Color(0.180392, 0.0941176, 1, 1)
+position = Vector2(-108, 12)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_fhsw3")
+
+[node name="SnapPosition3" type="Marker2D" parent="."]
+position = Vector2(1244, 307)
+script = ExtResource("6_yfrvi")
+
+[node name="FigurineYellow" type="Sprite2D" parent="SnapPosition3"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(1, 2.44531)
+texture = ExtResource("3_23qas")
+offset = Vector2(0, -65)
+script = ExtResource("9_v2mrm")
+
+[node name="Area2D" type="Area2D" parent="SnapPosition3/FigurineYellow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapPosition3/FigurineYellow/Area2D"]
+position = Vector2(-0.5, -65.7284)
+shape = SubResource("RectangleShape2D_odecg")
+
+[node name="YellowSpot" type="Sprite2D" parent="SnapPosition3"]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(97, -6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_fhsw3")
+
+[node name="SnapPosition4" type="Marker2D" parent="."]
+position = Vector2(1467, 591)
+script = ExtResource("7_71vct")
+
+[node name="FigurineGreen" type="Sprite2D" parent="SnapPosition4"]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(1, 2.44531)
+texture = ExtResource("3_23qas")
+offset = Vector2(0, -65)
+script = ExtResource("11_frji5")
+
+[node name="Area2D" type="Area2D" parent="SnapPosition4/FigurineGreen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapPosition4/FigurineGreen/Area2D"]
+position = Vector2(-0.5, -65.7284)
+shape = SubResource("RectangleShape2D_odecg")
+
+[node name="GreenSpot" type="Sprite2D" parent="SnapPosition4"]
+self_modulate = Color(0, 1, 0, 1)
+position = Vector2(52, 70)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_fhsw3")
+
+[node name="SnapPosition5" type="Marker2D" parent="."]
+position = Vector2(1004, 591)
+script = ExtResource("8_lkmfh")
+
+[node name="FigurineBlue" type="Sprite2D" parent="SnapPosition5"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 1, 1)
+scale = Vector2(1, 2.44531)
+texture = ExtResource("3_23qas")
+offset = Vector2(0, -65)
+script = ExtResource("7_nwm17")
+
+[node name="Area2D" type="Area2D" parent="SnapPosition5/FigurineBlue"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapPosition5/FigurineBlue/Area2D"]
+position = Vector2(-0.5, -65.7284)
+shape = SubResource("RectangleShape2D_odecg")
+
+[node name="SnapPosition6" type="Marker2D" parent="."]
+position = Vector2(1248, 862)
+script = ExtResource("9_4clv1")
+
+[node name="FigurinePurple" type="Sprite2D" parent="SnapPosition6"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0.596078, 1)
+scale = Vector2(1, 2.44531)
+texture = ExtResource("3_23qas")
+offset = Vector2(0, -65)
+script = ExtResource("14_aibjo")
+
+[node name="Area2D" type="Area2D" parent="SnapPosition6/FigurinePurple"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapPosition6/FigurinePurple/Area2D"]
+position = Vector2(-0.5, -65.7284)
+shape = SubResource("RectangleShape2D_odecg")
+
+[node name="PurpleSpot" type="Sprite2D" parent="SnapPosition6"]
+self_modulate = Color(1, 0.00392157, 1, 1)
+position = Vector2(115, -14)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_fhsw3")
+
+[node name="SnapPosition7" type="Marker2D" parent="."]
+position = Vector2(781, 858)
+script = ExtResource("10_352ie")
+
+[node name="FigurineBlack" type="Sprite2D" parent="SnapPosition7"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1, 2.44531)
+texture = ExtResource("3_23qas")
+offset = Vector2(0, -65)
+script = ExtResource("16_imf1c")
+
+[node name="Area2D" type="Area2D" parent="SnapPosition7/FigurineBlack"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapPosition7/FigurineBlack/Area2D"]
+position = Vector2(-0.5, -65.7284)
+shape = SubResource("RectangleShape2D_odecg")
+
+[node name="BlackSpot" type="Sprite2D" parent="SnapPosition7"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-124, -1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_fhsw3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("12_2xbux")
+
+[node name="CorrectPos" type="LineEdit" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_right = 296.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Correct Position: 0"
+
+[node name="Solved" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+offset_right = 1914.0
+offset_bottom = 1083.0
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Solved"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 487.0
+offset_right = 1523.0
+offset_bottom = 670.0
+theme_override_font_sizes/font_size = 128
+text = "PUZZLE SOLVED"
+
+[connection signal="input_event" from="SnapPosition1/FigurineRed/Area2D" to="SnapPosition1/FigurineRed" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="SnapPosition3/FigurineYellow/Area2D" to="SnapPosition3/FigurineYellow" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="SnapPosition4/FigurineGreen/Area2D" to="SnapPosition4/FigurineGreen" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="SnapPosition5/FigurineBlue/Area2D" to="SnapPosition5/FigurineBlue" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="SnapPosition6/FigurinePurple/Area2D" to="SnapPosition6/FigurinePurple" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="SnapPosition7/FigurineBlack/Area2D" to="SnapPosition7/FigurineBlack" method="_on_area_2d_input_event"]
